@@ -1,0 +1,9 @@
+body {
+  background-color: #ccc;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+}
