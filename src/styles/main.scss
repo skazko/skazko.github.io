@@ -1,11 +1,2 @@
-$color: #ccc;
-
-body {
-  background-color: $color;
-}
-
-.block {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-}
+@use 'styles.scss';
+@use '../components/header/header.scss';
