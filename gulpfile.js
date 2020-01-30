@@ -15,9 +15,10 @@ const { terser } = require('rollup-plugin-terser');
 
 const browserSync = require('browser-sync').create();
 
-sass.compiler = require('node-sass');
+sass.compiler = require('sass');
 
 pugbem.b = true;
+pugbem.m = '_';
 
 function html() {
   return src('src/pages/*.pug')
