@@ -38,7 +38,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --updateSnapshot",
+    "test": "echo\"No tests specified\"",
     "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/skazko/skazko.github.io.git"
   },
   "repository": {
