@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{p5nM:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),r=n("Wbzz"),c=n("Bl7J"),u=n("vrFN");t.default=function(){return l.a.createElement(c.a,null,l.a.createElement(u.a,{title:"Page two"}),l.a.createElement("h1",null,"Страница 2"),l.a.createElement("p",null,"А на ней тоже пока что пусто"),l.a.createElement(r.Link,{to:"/"},"Назад на главную"))}}}]);
+//# sourceMappingURL=component---src-pages-page-2-js-bb3d9edf0f5d1d6889fa.js.map
