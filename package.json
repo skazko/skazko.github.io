@@ -39,7 +39,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --updateSnapshot",
-    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/skazko/skazko.github.io.git"
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/skazko/skazko.github.io.git"
   },
   "repository": {
     "type": "git",
