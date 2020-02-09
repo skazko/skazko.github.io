@@ -1,43 +1,29 @@
 {
-  "name": "skazko.gihub.io",
-  "version": "0.0.1",
-  "description": "Portfolio and cv web site",
+  "name": "skazko.github.io",
+  "private": true,
+  "description": "Portfolio site",
+  "author": "Kazachenko Slava",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests!\""
+  },
+  "dependencies": {
+    "gatsby": "^2.19.12",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skazko/skazko.github.io.git"
-  },
-  "author": "Slava Kazachenko",
-  "license": "ISC",
-  "scripts": {
-    "dev": "gulp --development",
-    "build": "gulp --production"
-  },
-  "bugs": {
-    "url": "https://github.com/skazko/skazko.github.io/issues"
-  },
-  "homepage": "https://skazko.github.io",
-  "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.7",
-    "cssnano": "^4.1.10",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-mode": "^1.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-pugbem": "^2.2.4",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "rollup": "^1.30.1",
-    "rollup-plugin-terser": "^5.2.0",
-    "sass": "^1.25.0"
-  },
-  "browserslist": [
-    "last 2 Chrome version",
-    "last 2 Edge version",
-    "last 2 Firefox version",
-    "last 2 Opera version",
-    "last 2 Safari version"
-  ]
+    "url": "https://github.com/skazko/skazko.github.io"
+  }
 }
