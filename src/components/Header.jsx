@@ -16,5 +16,6 @@ export default () => (
   <Header>
     <SiteLogo />
     <NavLink to={'/about/'}>About</NavLink>
+    <NavLink to={'/contact/'}>Котакты</NavLink>
   </Header>
 )
