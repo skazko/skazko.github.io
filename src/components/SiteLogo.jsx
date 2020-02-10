@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { Title, LinkTitle } from './Title';
 
 const Logo = ({children}) => {
   const isHome = window.location.pathname === '/';
   if (isHome) {
     return (
-      <h1>
+      <Title>
         {children}
-      </h1>
+      </Title>
     );
   } else {
     return (
-      <Link to={'/'}>
+      <LinkTitle as={Link} to={'/'}>
         {children}
-      </Link>
+      </LinkTitle>
     );
   }
 };
