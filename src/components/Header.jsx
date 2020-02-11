@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavLink from './NavLink';
-import SiteLogo from './SiteLogo';
+import SiteTitle from './SiteTitle';
+import DarkModeToggler from './DarkModeToggler';
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -12,10 +13,13 @@ const Header = styled.header`
   border-bottom: 1px solid #cccccc;
 `;
 
-export default () => (
-  <Header>
-    <SiteLogo />
+ const Header = ({ theme, setTheme }) => (
+  <StyledHeader>
+    <SiteTitle />
     <NavLink to={'/about/'}>About</NavLink>
     <NavLink to={'/contact/'}>Котакты</NavLink>
-  </Header>
-)
+    <DarkModeToggler theme={theme} setTheme={setTheme} />
+  </StyledHeader>
+);
+
+export default Header;
