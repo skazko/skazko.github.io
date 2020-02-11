@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Title, LinkTitle } from './Title';
 
-const Logo = ({children}) => {
+const SiteTitleContainer = ({children}) => {
   const isHome = window.location.pathname === '/';
   if (isHome) {
     return (
@@ -19,10 +19,12 @@ const Logo = ({children}) => {
   }
 };
 
-export default () => (
-  <Logo>
+const SiteTitle = () => (
+  <SiteTitleContainer>
     {'Казаченко'}
     <br/>
     {'Вячеслав'}
-  </Logo>
+  </SiteTitleContainer>
 );
+
+export default SiteTitle;
