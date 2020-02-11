@@ -8,6 +8,7 @@ const SwitchIcon = ({ checked }) => checked ? <IconSun /> : <IconMoon />;
 const StyledLabel = styled.label`
   display: flex;
   padding: 0.25rem 1.125rem;
+
   &:hover {
     cursor: pointer
   }
@@ -16,7 +17,6 @@ const StyledLabel = styled.label`
     outline: ${props => props.theme.accentColor} 2px dotted;
   } 
 `;
-
 
 const DarkModeToggler = ({ theme, setTheme }) => {
   return (

@@ -9,6 +9,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.bgColor};
     transition: 0.3s ease-in-out;
   }
-`
+`;
 
 export default GlobalStyle;

@@ -16,7 +16,6 @@ const Layout = () => {
   const currentTheme = window.localStorage.getItem('theme') || 'light';
   const [theme, setTheme] = useState(currentTheme);
 
-  console.log(theme);
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
@@ -25,7 +24,7 @@ const Layout = () => {
         <Footer />
       </StyledLayout>
     </ThemeProvider> 
-  )
-}
+  );
+};
 
 export default Layout;
