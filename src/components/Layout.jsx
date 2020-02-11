@@ -10,6 +10,9 @@ const StyledLayout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: ${props => props.theme.textColor};
+  background-color: ${props => props.theme.bgColor};
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 `;
 
 const Layout = () => {
