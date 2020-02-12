@@ -1,9 +1,22 @@
 import styled from 'styled-components';
-import { screens } from '../../styles/media';
 
-const NavigationStyled = styled.nav`
-  @media ${screens.medium} {
-    display: none;
+export const DesktopNav = styled.nav`
+  @media ${({theme}) => theme.medium} {
+    transform: ${({open}) => open ? 'translateY(0)' : 'translateY(-300px)'};
+    opacity: ${({open}) => open ? 1 : 0};
+    visibility: ${({open}) => open ? 'visible' : 'hidden'};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: ${({theme}) => theme.popupBgColor};
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    backdrop-filter: blur(3px);
   }
 
   ul {
@@ -13,7 +26,7 @@ const NavigationStyled = styled.nav`
     display: flex;
     flex-direction: row;
 
-    @media ${screens.medium} {
+    @media ${({theme}) => theme.medium} {
       flex-direction: column;
     }
   }
@@ -25,5 +38,3 @@ const NavigationStyled = styled.nav`
     justify-content: center;
   }
 `;
-
-export default NavigationStyled;

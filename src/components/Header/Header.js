@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {string, func} from 'prop-types';
 import SiteTitle from '../SiteTitle';
 import DarkModeToggler from '../DarkModeToggler';
 import Navigation from '../Navigation';
-import StyledHeader, {
-  HeaderDarkModeToggler,
-  HeaderMenuToggler,
-  HeaderNavigation,
-  HeaderTitle
-} from './Header.styled';
+import StyledHeader from './Header.styled';
+import Burger from '../Burger';
 
+const Header = ({ theme, setTheme }) => {
+  const [open, setOpen] = useState(false);
 
- const Header = ({ theme, setTheme }) => (
-  <StyledHeader>
-    <HeaderMenuToggler>
-
-    </HeaderMenuToggler>
-    <HeaderTitle>
+  return (
+    <StyledHeader>
+      <DarkModeToggler 
+        theme={theme} 
+        setTheme={setTheme}
+      />
       <SiteTitle />
-    </HeaderTitle>
-    <HeaderNavigation>
-      <Navigation />
-    </HeaderNavigation>
-    <HeaderDarkModeToggler>
-      <DarkModeToggler theme={theme} setTheme={setTheme} />
-    </HeaderDarkModeToggler>
-    
-  </StyledHeader>
-);
+      <Burger open={open} setOpen={setOpen}/>
+      <Navigation open={open} setOpen={setOpen}/>
+      <DarkModeToggler 
+        theme={theme} 
+        setTheme={setTheme}
+        desktop
+      />
+    </StyledHeader>
+  );
+};
+
+Header.propTypes = {
+  theme: string.isRequired,
+  setTheme: func.isRequired
+}
 
 export default Header;

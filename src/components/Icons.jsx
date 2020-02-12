@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const IconMoon = props => (
   <svg
@@ -87,7 +87,7 @@ export const IconTelegram = props => (
   </svg>
 );
 
-export const IconMenuDots = props => (
+export const IconMenuDots = (props) => (
   <svg
     width={36}
     height={36}

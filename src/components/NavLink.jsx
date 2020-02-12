@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
-import { screens } from '../styles/media';
 
 const linkActivate = keyframes`
   from {
@@ -24,7 +23,7 @@ const StyledNavItem = styled.span`
   color: ${props => props.theme.textColor};
   text-decoration: none;
 
-  @media ${screens.medium} {
+  @media ${({theme}) => theme.medium} {
     font-size: 2.5rem;
     line-height: 3rem;
     text-transform: uppercase;
@@ -42,6 +41,13 @@ const StyledNavItemActive = styled(StyledNavItem)`
     bottom: -0.5rem;
     left: 0;
     animation: ${linkActivate} 0.2s ease-in-out;
+  }
+  @media ${({theme}) => theme.medium} {
+    color: ${props => props.theme.inverseColor};
+    background-color: ${props => props.theme.inverseBg};
+    &::after {
+      content: none;
+    }
   }
 `;
 
