@@ -1,25 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
+import {bool, string, func} from 'prop-types';
 import VisuallyHidden from './VisuallyHidden';
 import { IconMoon, IconSun } from './Icons';
 
-const SwitchIcon = ({ checked }) => checked ? <IconSun /> : <IconMoon />;
-
 const StyledLabel = styled.label`
-  display: flex;
-  
+  display: ${p => p.desktop ? 'flex' : 'none'};
+  padding-left: ${p => p.desktop ? '1.125rem' : '0'};
+
   &:hover {
     cursor: pointer
   }
   
   ${VisuallyHidden}:focus + * {
     outline: ${props => props.theme.accentColor} 2px dotted;
-  } 
+  }
+
+  @media ${({theme}) => theme.medium} {
+    display: ${p => p.desktop ? 'none' : 'flex'};
+  }
 `;
 
-const DarkModeToggler = ({ theme, setTheme }) => {
+const DarkModeToggler = ({ theme, setTheme, desktop }) => {
   return (
-    <StyledLabel>
+    <StyledLabel desktop={desktop}>
       <VisuallyHidden
         type='checkbox'
         onChange={(e) => {
@@ -29,9 +33,16 @@ const DarkModeToggler = ({ theme, setTheme }) => {
         }}
         checked={theme === 'dark'}
       />
-      <SwitchIcon checked={theme === 'dark'} />
+      <IconSun hidden={theme !== 'dark'} />
+      <IconMoon hidden={theme === 'dark'} />
     </StyledLabel>
   );
-}
+};
+
+DarkModeToggler.propTypes = {
+  theme: string.isRequired,
+  setTheme: func.isRequired,
+  desktop: bool
+};
 
 export default DarkModeToggler;
