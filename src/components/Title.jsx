@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { screens } from '../styles/media';
 
 export const Title = styled.h1`
   display: block;
@@ -11,12 +10,12 @@ export const Title = styled.h1`
   margin-right: auto;
   text-align: center;
 
-  @media ${screens.medium} {
+  @media ${({theme}) => theme.medium} {
     font-size: 1.5rem;
     margin-right: 0;
   }
 
-  @media ${screens.small} {
+  @media ${({theme}) => theme.small} {
     font-size: 1.25rem;
   }
 `;
@@ -27,10 +26,10 @@ export const LinkTitle = styled(Title)`
   }
 
   &:visited {
-    color: ${props => props.theme.textColor};
+    color: ${({theme}) => theme.textColor};
   }
 
   &:hover, &:active, &:focus {
-    color: ${props => props.theme.accentColor};
+    color: ${({theme}) => theme.accentColor};
   }
 `;
