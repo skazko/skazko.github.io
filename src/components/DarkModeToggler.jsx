@@ -7,8 +7,7 @@ const SwitchIcon = ({ checked }) => checked ? <IconSun /> : <IconMoon />;
 
 const StyledLabel = styled.label`
   display: flex;
-  padding: 0.25rem 1.125rem;
-
+  
   &:hover {
     cursor: pointer
   }
