@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { Title, LinkTitle } from './Title';
 
 const SiteTitleContainer = ({children}) => {
-  const isHome = window.location.pathname === '/';
-  if (isHome) {
+  const [home, setHome] = useState(false);
+
+  useEffect(() => {
+    setHome(window.location.pathname === '/')
+  }, []);
+
+  if (home) {
     return (
       <Title>
         {children}

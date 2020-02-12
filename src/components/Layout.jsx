@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import Header from './Header';
@@ -16,8 +16,14 @@ const StyledLayout = styled.div`
 `;
 
 const Layout = () => {
-  const currentTheme = window.localStorage.getItem('theme') || 'light';
-  const [theme, setTheme] = useState(currentTheme);
+  const [theme, setTheme] = useState('light');
+  
+  useEffect(() => {
+    const currentTheme = window.localStorage.getItem('theme');
+    if (currentTheme) {
+      setTheme(currentTheme);
+    }
+  }, [])
 
   return (
     <ThemeProvider theme={themes[theme]}>

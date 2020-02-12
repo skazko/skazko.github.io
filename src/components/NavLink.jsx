@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 
@@ -64,8 +64,13 @@ const StyledNavLink = styled(StyledNavItem)`
 
 export default (props) => {
   const {children, ...restProps} = props;
-  const isActive = props.to === window.location.pathname;
-  if (isActive) {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(props.to === window.location.pathname)
+  }, []);
+
+  if (active) {
     return (
       <StyledNavItemActive>
         {children}
