@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
 import Header from './Header';
 import GlobalStyle from './GlobalStyle';
 import Footer from './Footer';
-import { themes } from '../styles/themes';
 
 const StyledLayout = styled.div`
   min-height: 100vh;
@@ -16,23 +14,14 @@ const StyledLayout = styled.div`
 `;
 
 const Layout = () => {
-  const [theme, setTheme] = useState('light');
-  
-  useEffect(() => {
-    const currentTheme = window.localStorage.getItem('theme');
-    if (currentTheme) {
-      setTheme(currentTheme);
-    }
-  }, [])
-
   return (
-    <ThemeProvider theme={themes[theme]}>
+    <>
       <GlobalStyle />
       <StyledLayout>
-        <Header setTheme={setTheme} theme={theme} />
+        <Header />
         <Footer />
       </StyledLayout>
-    </ThemeProvider> 
+    </>
   );
 };
 
