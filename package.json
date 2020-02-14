@@ -13,7 +13,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests!\""
+    "test": "echo \"Write tests!\"",
+    "localbuild": "gatsby clean && gatsby build"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
