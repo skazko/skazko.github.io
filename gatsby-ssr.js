@@ -1,49 +1,43 @@
 import React from 'react';
-import ContextProvider from './context';
-
-export const wrapRootElement = ({element}) => (
-  <ContextProvider>
-    {element}
-  </ContextProvider>
-);
 
 // script from https://github.com/gaearon/overreacted.io/blob/master/src/html.js
+// found here: https://dev.to/amaltapalov/how-i-set-dark-mode-for-gatsby-website-4ni0
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents([
     React.createElement('script', {
       dangerouslySetInnerHTML: {
-          __html: `
-            (() => {    
-              window.__onThemeChange = function() {};                
-              function setTheme(newTheme) {                  
-                window.__theme = newTheme;                  
-                preferredTheme = newTheme;                  
-                document.body.className = newTheme;                 
-                window.__onThemeChange(newTheme);                
-              }
-  
-              let preferredTheme
+        __html: `
+          (() => {    
+            window.__onThemeChange = function() {};                
+            function setTheme(newTheme) {                  
+              window.__theme = newTheme;                  
+              preferredTheme = newTheme;                  
+              document.body.className = newTheme;                 
+              window.__onThemeChange(newTheme);                
+            }
+
+            var preferredTheme
+            try {
+              preferredTheme = localStorage.getItem('theme')
+            } catch (err) {}
+
+            window.__setPreferredTheme = newTheme => {
+              setTheme(newTheme)
               try {
-                preferredTheme = localStorage.getItem('theme')
+                localStorage.setItem('theme', newTheme)
               } catch (err) {}
-  
-              window.__setPreferredTheme = newTheme => {
-                setTheme(newTheme)
-                try {
-                  localStorage.setItem('theme', newTheme)
-                } catch (err) {}
-              }
-  
-              let darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
-              darkQuery.addListener(e => {
-                window.__setPreferredTheme(e.matches ? 'light' : 'dark')
-              })
-  
-              setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'))
-            })()
-          `,
-      }
+            }
+
+            let darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+            darkQuery.addListener(e => {
+              window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+            })
+
+            setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+          })()
+        `,
+      },
     }),
   ]);
 };
