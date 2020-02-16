@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/contact.jsx"],"names":[],"mappings":"2FAAA,4CAGe,4BACb,kBAAC,IAAD","file":"component---src-pages-contact-jsx-63ccb4997eef571a2961.js","sourcesContent":["import React from 'react';\r\nimport Layout from '../components/Layout';\r\n\r\nexport default () => (\r\n  <Layout />\r\n);\r\n"],"sourceRoot":""}
