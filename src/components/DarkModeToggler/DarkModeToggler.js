@@ -1,36 +1,29 @@
-import React, { useContext } from 'react';
-import {bool} from 'prop-types';
-import VisuallyHidden from '../VisuallyHidden';
+import React from 'react';
+import {bool, string} from 'prop-types';
 import { IconMoon, IconSun } from '../Icons';
-import { StateContext, DispatchContext } from '../../../theme';
-import StyledLabel from './DarkModeToggler.styled';
+import { button, mobileButton } from './style.module.css';
 
-
-const DarkModeToggler = ({ desktop }) => {
-  const { theme } = useContext(StateContext);
-  const dispatch = useContext(DispatchContext);
-
-  const toggleTheme = () => {
-    dispatch({type: 'TOGGLE_THEME'});
-  };
-
-  const isDark = theme => theme === 'dark'; 
+const DarkModeToggler = ({ desktop, mode }) => {
 
   return (
-    <StyledLabel desktop={desktop}>
-      <VisuallyHidden
-        type='checkbox'
-        onChange={toggleTheme}
-        checked={isDark(theme)}
-      />
-      <IconSun hidden={!isDark(theme)} />
-      <IconMoon hidden={isDark(theme)} />
-    </StyledLabel>
+    <button 
+      className={desktop ? button : mobileButton}
+      type="button"
+      onClick={() => {
+        window.__setPreferredTheme(mode === 'light' ? 'dark' : 'light');
+      }}
+      style={{
+        marginLeft: `${desktop ? '1.125rem' : '0'}`
+      }}
+    >
+      {mode === 'dark' ? <IconSun /> : <IconMoon />}
+    </button>
   );
 };
 
 DarkModeToggler.propTypes = {
-  desktop: bool
+  desktop: bool,
+  mode: string
 };
 
 export default DarkModeToggler;

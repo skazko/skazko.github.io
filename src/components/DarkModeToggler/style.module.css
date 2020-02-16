@@ -1,0 +1,34 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--text);
+  margin-left: 1.125rem;
+}
+
+.button:focus {
+  outline: var(--accent) 2px dotted;
+}
+
+.button:active {
+  outline: var(--accent) 3px solid;
+}
+
+.mobileButton {
+  composes: button;
+  display: none;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 950px) {
+  .button {
+    display: none;
+  }
+  .mobileButton {
+    display: flex;
+  }
+}

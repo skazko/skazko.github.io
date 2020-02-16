@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.light {
+  --text: #222222;
+  --bg: #fbfbfb;
+  --accent: #cd2653;
+  --popupbg: rgb(251, 251, 251, 0.7);
+  --inverseText: #fbfbfb;
+  --inverseBg: #222222;
+}
+
+body.dark {
+  --text: #fbfbfb;
+  --bg: #222222;
+  --accent: #cd2653;
+  --popupbg: rgb(34, 34, 34, 0.75);
+  --inverseText: #222222;
+  --inverseBg: #fbfbfb;
+}

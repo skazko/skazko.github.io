@@ -14,16 +14,16 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests!\"",
-    "localbuild": "gatsby clean && gatsby build"
+    "localbuild": "gatsby clean && gatsby build && gatsby serve"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.12",
-    "gatsby-plugin-styled-components": "^3.1.19",
+    "gatsby-plugin-react-helmet": "^3.1.22",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^5.0.1"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",

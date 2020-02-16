@@ -1,26 +1,50 @@
 import React from 'react';
-import {bool, func} from 'prop-types';
-import NavLink from '../NavLink';
-import {DesktopNav} from './Navigation.styled';
+import {Link} from 'gatsby'
+import {bool} from 'prop-types';
+import nav from './navigation.module.css';
 
- const Navigation = ({open, setOpen}) => {
-  const links = [
-    <li key={1}><NavLink to={'/about/'}>About</NavLink></li>,
-    <li key={2}><NavLink to={'/contact/'}>Контакты</NavLink></li>
+ const Navigation = ({open}) => {
+  const menuItems = [
+    {
+      path: '/about/',
+      key: 'about',
+      title: 'Обо мне'
+    },
+    {
+      path: '/contact/',
+      key: 'contact',
+      title: 'Контакты'
+    },
   ];
+  const links = menuItems.map((item) => (
+    <li key={item.key} className={nav.item}>
+      <Link 
+        to={item.path}
+        className={nav.link} 
+        activeClassName={nav.activeLink}>
+          {item.title}
+        </Link>
+    </li>
+  ))
 
   return (
-    <DesktopNav open={open}>
-      <ul>
-        {links}
-      </ul>
-    </DesktopNav>
+    <>
+      <nav className={nav.menu}>
+        <ul className={nav.list}>
+          {links}
+        </ul>
+      </nav>
+      <nav className={`${nav.mobileMenu} ${open ? nav.open : ''}`}>
+        <ul>
+          {links}
+        </ul>
+      </nav>
+    </>
   );
 };
 
 Navigation.propTypes = {
   open: bool.isRequired,
-  setOpen: func
 }
 
 export default Navigation;
