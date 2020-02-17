@@ -1,29 +1,39 @@
 import React from 'react';
-import {bool, string} from 'prop-types';
-import { IconMoon, IconSun } from '../Icons';
+import {bool, func} from 'prop-types';
+import { IconMoon, IconSun, Empty } from '../Icons';
 import { button, mobileButton } from './style.module.css';
 
-const DarkModeToggler = ({ desktop, mode }) => {
+const DarkModeToggler = ({ desktop, mode, toggle }) => {
+
+  function renderIcon() {
+    switch (mode) {
+      case 'light':
+        return <IconMoon />;
+      case 'dark': 
+        return <IconSun />;
+      default:
+        return <Empty />
+    }
+  }
 
   return (
     <button 
       className={desktop ? button : mobileButton}
       type="button"
-      onClick={() => {
-        window.__setPreferredTheme(mode === 'light' ? 'dark' : 'light');
-      }}
+      onClick={toggle}
       style={{
         marginLeft: `${desktop ? '1.125rem' : '0'}`
       }}
     >
-      {mode === 'dark' ? <IconSun /> : <IconMoon />}
+      {renderIcon()}
     </button>
   );
 };
 
 DarkModeToggler.propTypes = {
   desktop: bool,
-  mode: string
+  isDark: bool.isRequired,
+  toggle: func.isRequired
 };
 
 export default DarkModeToggler;

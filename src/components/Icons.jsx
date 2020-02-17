@@ -121,3 +121,15 @@ export const IconMenuClose = props => (
     <path d="M6 6L18 18" />
   </svg>
 );
+
+export const Empty = () => (
+  <svg
+    width={36}
+    height={36}
+    viewBox="0 0 24 24"
+    fill="transparent"
+    stroke="transparent"
+    strokeWidth={0}
+  >
+  </svg>
+);
