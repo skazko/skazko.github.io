@@ -3,12 +3,12 @@ import {bool, func} from 'prop-types';
 import { IconMenuDots, IconMenuClose } from '../Icons';
 import { burger } from './burger.module.css';
 
-const Burger = ({open, setOpen}) => {
+const Burger = ({open, toggleMenu}) => {
   return (
     <button 
       className={burger} 
       open={open} 
-      onClick={() => setOpen(!open)}
+      onClick={toggleMenu}
       type='button'
     >
       {open ? <IconMenuClose /> : <IconMenuDots />}
@@ -18,7 +18,7 @@ const Burger = ({open, setOpen}) => {
 
 Burger.propTypes = {
   open: bool.isRequired,
-  setOpen: func.isRequired
+  toggleMenu: func.isRequired
 }
 
 export default Burger;

@@ -10,6 +10,7 @@ const Layout = ({children, path}) => {
       query {
         site {
           siteMetadata {
+            title
             social {
               link
               name
@@ -30,7 +31,7 @@ const Layout = ({children, path}) => {
   return (
     <>
       <div className={body}>
-        <Header path={path} />
+        <Header path={path} title={data.site.siteMetadata.title} />
         {children}
         <footer className={footer}>
           <nav className={social}>

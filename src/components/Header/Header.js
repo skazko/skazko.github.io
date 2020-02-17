@@ -1,72 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Helmet } from "react-helmet"
 import DarkModeToggler from '../DarkModeToggler';
 import Navigation from '../Navigation';
 import Burger from '../Burger';
-import { header, title, link } from './header.module.css';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import style from './header.module.css';
+import { Link } from 'gatsby';
 
-const Header = ({path}) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  );
-
-  let websiteTheme;
-  if (typeof window !== 'undefined') {
-    websiteTheme = window.__theme;
+class Header extends React.Component {
+  state = {
+    theme: null,
+    menuOpen: false
   }
-  const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(websiteTheme);
 
-  useEffect(() => {
-    setTheme(window.__theme);
+  componentDidMount() {
+    this.setState({theme: window.__theme});
     window.__onThemeChange = () => {
-      setTheme(window.__theme);
+      this.setState({theme: window.__theme});
     };
-  }, []);
+  }
 
-  function renderTitle() {
+  toggleMenu = () => {
+    this.setState((state) => {
+      return {
+        menuOpen: !state.menuOpen
+      }
+    });
+  }
+
+  toggleDarkMode = () => {
+    window.__setPreferredTheme(this.state.theme === 'dark' ? 'light' : 'dark');
+  }
+
+  renderTitle() {
+    const { title, path } = this.props;
     if (path === '/') {
       return (
-        <h1 className={title}>
-          <Link className={link} to='/'>{data.site.siteMetadata.title}</Link>
+        <h1 className={style.title}>
+          <Link className={style.link} to='/'>{title}</Link>
         </h1>
       );
     } else {
       return (
-        <h3 className={title}>
-          <Link className={link} to='/'>{data.site.siteMetadata.title}</Link>
+        <h3 className={style.title}>
+          <Link className={style.link} to='/'>{title}</Link>
         </h3>
       );
     }
-
   }
 
-  return (
-    <header className={header}>
-      <Helmet
-        meta={[
-          {
-            name: 'theme-color',
-            content: theme === 'light' ? '#fbfbfb' : '#222222',
-          },
-        ]}
-      />
-      <DarkModeToggler mode={theme}/>
-      {renderTitle()}
-      <Burger open={open} setOpen={setOpen}/>
-      <Navigation open={open} setOpen={setOpen}/>
-      <DarkModeToggler mode={theme} desktop />
-    </header>
-  );
-};
+  render() {
+    const {state: {theme, menuOpen}, toggleDarkMode, toggleMenu} = this;
+
+    return (
+      <header className={style.header}>
+        <Helmet
+          meta={[
+            {
+              name: 'theme-color',
+              content: theme === 'light' ? '#fbfbfb' : '#222222',
+            },
+          ]}
+        />
+        <DarkModeToggler mode={theme} toggle={toggleDarkMode}/>
+        {this.renderTitle()}
+        <Burger open={menuOpen} toggleMenu={toggleMenu}/>
+        <Navigation open={menuOpen} />
+        <DarkModeToggler mode={theme} toggle={toggleDarkMode} desktop />
+      </header>
+    )
+  }
+}
 
 export default Header;
