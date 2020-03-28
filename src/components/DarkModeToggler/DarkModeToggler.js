@@ -1,5 +1,5 @@
 import React from 'react';
-import {bool, func} from 'prop-types';
+import {bool, func, string} from 'prop-types';
 import { IconMoon, IconSun, Empty } from '../Icons';
 import { button, mobileButton } from './style.module.css';
 
@@ -32,7 +32,7 @@ const DarkModeToggler = ({ desktop, mode, toggle }) => {
 
 DarkModeToggler.propTypes = {
   desktop: bool,
-  isDark: bool.isRequired,
+  mode: string,
   toggle: func.isRequired
 };
 

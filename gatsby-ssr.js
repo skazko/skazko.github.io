@@ -1,8 +1,5 @@
 import React from 'react';
 
-// script from https://github.com/gaearon/overreacted.io/blob/master/src/html.js
-// found here: https://dev.to/amaltapalov/how-i-set-dark-mode-for-gatsby-website-4ni0
-
 export const onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents([
     React.createElement('script', {

@@ -35,7 +35,7 @@ import nav from './navigation.module.css';
         </ul>
       </nav>
       <nav className={`${nav.mobileMenu} ${open ? nav.open : ''}`}>
-        <ul>
+        <ul className={nav.mobileList}>
           {links}
         </ul>
       </nav>

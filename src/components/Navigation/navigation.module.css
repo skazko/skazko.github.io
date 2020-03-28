@@ -2,6 +2,12 @@
   display: none;
 }
 
+.mobileList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -28,7 +34,7 @@
 }
 
 .activeLink {
-  color: var(--inverseText);
+  color: var(--inverseText) !important;
   background-color: var(--inverseBg);
 }
 
