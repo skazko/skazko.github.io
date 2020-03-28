@@ -22,3 +22,11 @@ body.dark {
   --inverseText: #222222;
   --inverseBg: #fbfbfb;
 }
+
+a, a:visited {
+  color: var(--text);
+}
+
+a:hover, a:focus, a:active {
+  color: var(--accent);
+} 
