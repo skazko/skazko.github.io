@@ -25,13 +25,11 @@ export default function Template({ data }) {
           >Деплой</a>
         </div>
         <video
-          // onMouseEnter={e => e.target.play()}
-          // onMouseLeave={e => e.target.pause()}
           className={style.video} 
           loop
           autoPlay
           muted>
-          <source src={frontmatter.video.publicURL} type="video/webm"/>
+          <source src={frontmatter.video.publicURL} type="video/mp4"/>
         </video>
         <div 
           dangerouslySetInnerHTML={{__html: html}}>

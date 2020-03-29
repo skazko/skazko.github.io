@@ -25,6 +25,7 @@ const ProjectLink = ({ post }) => {
           className={style.video} 
           loop
           muted
+          preload="auto"
           >
           <source src={post.frontmatter.video.publicURL} type="video/mp4"/>
         </video>
