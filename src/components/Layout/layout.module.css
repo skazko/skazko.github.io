@@ -7,6 +7,10 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+.body main {
+  padding: 2rem;
+}
+
 .footer {
   margin-top: auto;
   padding: 2rem;
@@ -49,13 +53,13 @@
 }
 
 @media screen and (max-width: 950px) {
-  .footer {
+  .footer, .body main {
     padding: 1.5rem;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .footer {
+  .footer, .body main {
     padding: 0.375rem 1.125rem;
   }
 }

@@ -32,7 +32,7 @@ const Layout = ({children, path}) => {
     <>
       <div className={body}>
         <Header path={path} title={data.site.siteMetadata.title} />
-        {children}
+        <main>{children}</main>
         <footer className={footer}>
           <nav className={social}>
             <ul className={socialList}>
