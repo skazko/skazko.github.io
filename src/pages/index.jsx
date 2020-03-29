@@ -10,9 +10,15 @@ export default (props) => {
     .filter(edge => edge.node.frontmatter.type === 'project')
     .map(edge => <ProjectLink key={edge.node.id} post={edge.node} />);
 
+  const titleStyle = {
+    marginBottom: '1.75rem', 
+    fontSize: '2.5rem',
+    textAlign: 'center'
+  }
+
   return (
     <Layout path={props.path}>
-      <h2 style={{marginBottom: '1.75rem'}}>Мои последние работы</h2>
+      <h2 style={titleStyle}>Мои проекты</h2>
       <ProjectList>{Posts}</ProjectList>
     </Layout>
   )
