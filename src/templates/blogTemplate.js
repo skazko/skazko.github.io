@@ -10,35 +10,33 @@ export default function Template({ data }) {
   console.log(frontmatter)
   return (
     <Layout>
-      <main className={style.container}>
-        <article className={style.project}>
-          <h1>{frontmatter.title}</h1>
-          <div className={style.links}>
-            <a
-              href={frontmatter.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-            >Репозиторий</a> 
-            <a
-              href={frontmatter.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >Деплой</a>
-          </div>
-          <video
-            // onMouseEnter={e => e.target.play()}
-            // onMouseLeave={e => e.target.pause()}
-            className={style.video} 
-            loop
-            autoPlay
-            muted>
-            <source src={frontmatter.video.publicURL} type="video/webm"/>
-          </video>
-          <div 
-            dangerouslySetInnerHTML={{__html: html}}>
-          </div>
-        </article>
-      </main>
+      <article className={style.project}>
+        <h1>{frontmatter.title}</h1>
+        <div className={style.links}>
+          <a
+            href={frontmatter.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >Репозиторий</a> 
+          <a
+            href={frontmatter.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >Деплой</a>
+        </div>
+        <video
+          // onMouseEnter={e => e.target.play()}
+          // onMouseLeave={e => e.target.pause()}
+          className={style.video} 
+          loop
+          autoPlay
+          muted>
+          <source src={frontmatter.video.publicURL} type="video/webm"/>
+        </video>
+        <div 
+          dangerouslySetInnerHTML={{__html: html}}>
+        </div>
+      </article>
     </Layout>
   );
 }
