@@ -5,7 +5,7 @@ date: "2020-28-03"
 title: "Cozy3d.com"
 repo: "https://github.com/skazko/cozy3d.com"
 url: "https://cozy3d.com/"
-video: "./cozy3d.webm"
+video: "./cozy3d.mp4"
 ---
 
 ## Задача
