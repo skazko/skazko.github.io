@@ -1,0 +1,27 @@
+.ProjectLink video {
+  width: 100%
+}
+
+@media screen and (min-width: 800px) {
+  .ProjectLink {
+    flex: 0 0 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ProjectLink {
+    flex: 0 0 33.33%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .ProjectLink {
+    flex: 0 0 25%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .ProjectLink {
+    flex: 0 0 20%;
+  }
+}
