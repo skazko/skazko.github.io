@@ -7,7 +7,7 @@ import style from './blogTemplate.module.css';
 export default function Template({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  console.log(frontmatter)
+
   return (
     <Layout>
       <article className={style.project}>
@@ -28,8 +28,10 @@ export default function Template({ data }) {
           className={style.video} 
           loop
           autoPlay
-          muted>
-          <source src={frontmatter.video.publicURL} type="video/mp4"/>
+          muted
+          playsinline
+          src={frontmatter.video.publicURL} 
+          type="video/mp4" >
         </video>
         <div 
           dangerouslySetInnerHTML={{__html: html}}>
