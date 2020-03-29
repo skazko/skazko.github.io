@@ -1,5 +1,6 @@
 ---
-path: "/projects/cozy3d-com"
+type: "project"
+path: "/projects/cozy3d"
 date: "2020-28-03"
 title: "Cozy3d.com"
 repo: "https://github.com/skazko/cozy3d.com"
