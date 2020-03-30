@@ -11,15 +11,19 @@ const ProjectLink = ({ post }) => {
           onMouseEnter={e => {
             if (!play) {
               setPlay(e.target.play());
+              console.log('play');
+              console.log(play)
             }
           }}
           onMouseLeave={e => {
+            console.log('pause');
+            console.log(play)
             const target = e.target;
             if (play) {
               play.then(_ => {
                 target.pause();
                 setPlay(false);
-              })
+              }).catch(e => console.error(e))
             }
           }}
           loop
