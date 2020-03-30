@@ -5,7 +5,8 @@ date: "2019-16-11"
 title: "Таплист пивного магазина"
 repo: "https://github.com/skazko/crafterbeer"
 url: "https://crafterbeer.kreeon.now.sh/"
-video: "./crafterbeer.mp4"
+video: "./crafterbeer2.mp4"
+poster: "./crafterbeer.png"
 ---
 
 ## Задача

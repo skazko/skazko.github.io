@@ -24,10 +24,9 @@ const ProjectLink = ({ post }) => {
           }}
           loop
           muted
-          playsinline
-          src={post.frontmatter.video.publicURL} 
-          type="video/mp4"
-          >
+          playsInline
+          poster={post.frontmatter.poster.publicURL}
+          src={post.frontmatter.video.publicURL} >
         </video>
       </Link>
       <Link to={post.frontmatter.path}>

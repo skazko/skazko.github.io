@@ -35,6 +35,7 @@ export const pageQuery = graphql`
             date
             path
             title
+            poster {publicURL}
             video {publicURL}
           }
         }

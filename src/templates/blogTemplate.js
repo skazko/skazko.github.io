@@ -29,9 +29,9 @@ export default function Template({ data }) {
           loop
           autoPlay
           muted
-          playsinline
-          src={frontmatter.video.publicURL} 
-          type="video/mp4" >
+          playsInline
+          poster={frontmatter.poster.publicURL}
+          src={frontmatter.video.publicURL} >
         </video>
         <div 
           dangerouslySetInnerHTML={{__html: html}}>
@@ -50,6 +50,9 @@ export const pageQuery = graphql`
         repo
         path
         title
+        poster {
+          publicURL
+        }
         video {
           publicURL
         }
