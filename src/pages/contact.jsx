@@ -48,13 +48,12 @@ export default (props) => {
   
   return (
     <Layout >
-      <h1 style={{fontSize: '2.5rem', textAlign: 'center'}}>Буду рад вашему сообщению</h1>
-      <div style={{textAlign: 'center'}}>
-        { mail ? <Mail mail={mail} /> : null }
-        { telegram ? <Telegram tg={telegram} /> : null }
-        { github ? <Github gh={github} /> : null }
-      </div>
-      
+      <section style={{width: '100%', maxWidth: '640px', margin: '0 auto'}}>
+        <h1>Контакты</h1>
+          { mail ? <Mail mail={mail} /> : null }
+          { telegram ? <Telegram tg={telegram} /> : null }
+          { github ? <Github gh={github} /> : null }
+      </section>
     </Layout>
   )
 };
