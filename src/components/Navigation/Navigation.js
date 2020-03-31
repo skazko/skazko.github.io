@@ -36,6 +36,14 @@ import nav from './navigation.module.css';
       </nav>
       <nav className={`${nav.mobileMenu} ${open ? nav.open : ''}`}>
         <ul className={nav.mobileList}>
+          <li className={nav.item}>
+            <Link
+            to={'/'}
+            className={nav.link} 
+            activeClassName={nav.activeLink} >
+              Проекты
+            </Link>
+          </li>
           {links}
         </ul>
       </nav>
