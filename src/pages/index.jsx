@@ -18,7 +18,7 @@ export default (props) => {
 
   return (
     <Layout path={props.path}>
-      <h2 style={titleStyle}>Мои проекты</h2>
+      <h2 style={titleStyle}>Проекты</h2>
       <ProjectList>{Posts}</ProjectList>
     </Layout>
   )
