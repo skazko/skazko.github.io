@@ -9,7 +9,7 @@ module.exports = {
       },
       {
         name: 'email',
-        value: 'skazko.1986@gmail.com',
+        value: 'kreeon@ya.ru',
         link: 'mailto:kreeon@ya.ru'
       },
       {
