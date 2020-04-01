@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Header from '../Header';
 import { IconGithub, IconTelegram, IconEMail } from '../Icons';
@@ -22,16 +22,31 @@ const Layout = ({children, path}) => {
     `
   );
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const icons = {
     github: <IconGithub />,
     telegram: <IconTelegram />,
     email: <IconEMail />
   }
 
+  const overflowHidden = {
+    position: 'relative',
+    height: '100vh',
+    overflow: 'hidden',
+    display: 'block'
+  }
+
   return (
     <>
-      <div className={body}>
-        <Header path={path} title={data.site.siteMetadata.title} />
+      <div 
+        className={body}
+        style={menuOpen ? overflowHidden : null}>
+        <Header 
+          path={path} 
+          title={data.site.siteMetadata.title}
+          setMenuOpen={setMenuOpen}
+          menuOpen={menuOpen} />
         <main>{children}</main>
         <footer className={footer}>
           <nav className={social}>

@@ -20,11 +20,8 @@ class Header extends React.Component {
   }
 
   toggleMenu = () => {
-    this.setState((state) => {
-      return {
-        menuOpen: !state.menuOpen
-      }
-    });
+    const {setMenuOpen, menuOpen} = this.props;
+    setMenuOpen(!menuOpen);
   }
 
   toggleDarkMode = () => {
@@ -49,7 +46,12 @@ class Header extends React.Component {
   }
 
   render() {
-    const {state: {theme, menuOpen}, toggleDarkMode, toggleMenu} = this;
+    const {
+      state: {theme}, 
+      toggleDarkMode, 
+      toggleMenu, 
+      props: {menuOpen}
+    } = this;
 
     return (
       <header className={style.header}>

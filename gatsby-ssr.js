@@ -5,7 +5,7 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     React.createElement('script', {
       dangerouslySetInnerHTML: {
         __html: `
-          (() => {    
+          (() => {
             window.__onThemeChange = function() {};                
             function setTheme(newTheme) {                  
               window.__theme = newTheme;                  
@@ -31,7 +31,7 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
               window.__setPreferredTheme(e.matches ? 'dark' : 'light')
             })
 
-            setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+            setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))    
           })()
         `,
       },
