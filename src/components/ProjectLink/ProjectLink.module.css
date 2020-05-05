@@ -1,5 +1,11 @@
 .ProjectLink video {
-  width: 100%
+  width: 100%;
+}
+
+.ProjectLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 800px) {
