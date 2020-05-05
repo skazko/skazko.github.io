@@ -7,7 +7,7 @@ import style from "./blogTemplate.module.css"
 export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-
+  console.log("frontmatter video", frontmatter.video)
   return (
     <Layout>
       <article className={style.project}>

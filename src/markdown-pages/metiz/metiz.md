@@ -4,6 +4,7 @@ path: "/projects/oboronmetiz"
 date: "2020-02-05"
 title: "Верстка макета"
 repo: "https://github.com/skazko/hardvare-shop"
+url: ""
 video: "./metiz.mp4"
 poster: "./metiz.png"
 ---
